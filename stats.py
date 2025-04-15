@@ -17,6 +17,28 @@ def char_count(filepath):
     return chardict
     # print(chardict)
 
+def sort_on(dict):
+    return dict["num"]
+
+def sorter(chardict):
+    sortlistdict = []
+    for char in chardict:
+        if char.isalpha():
+            sortlistdict.append({"char": char, "num": chardict[char]})
+    sortlistdict.sort(reverse=True, key=sort_on)
+    for item in sortlistdict:
+        print(f"{item['char']}: {item['num']}")
+
+"""
+def chars_dict_to_sorted_list(num_chars_dict):
+    sorted_list = []
+    for ch in num_chars_dict:
+        sorted_list.append({"char": ch, "num": num_chars_dict[ch]})
+    sorted_list.sort(reverse=True, key=sort_on)
+    return sorted_list
+"""
+
+'''
 def sorter(chardict):
     sortlistdict = []
     for char in chardict:
@@ -28,3 +50,4 @@ def sorter(chardict):
         print(f"{char}, {count}")
     sortlistdict.sort(reverse=True, key=count)
     print(sortlistdict)
+'''
